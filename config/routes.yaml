@@ -1,0 +1,33 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+index:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number  
+
+app_triangle:
+    path: /triangle/{a}/{b}/{c}
+    controller: App\Controller\TriangleController::triangle
+    methods: GET
+    requirements:
+        a: '\d+'
+        b: '\d+'
+        c: '\d+' 
+
+app_circle:
+    path: /circle/{radius}
+    controller: App\Controller\CircleController::circle
+    methods: GET
+    requirements:
+        radius: '\d+'
+
+app_api_caculate_area_circumference:
+    path: /api/caculate/area/circumference/{figure}/{a_radius}/{b}/{c}
+    controller: App\Controller\Api\CaculateAreaCircumferenceController
+    methods: GET
+    requirements:
+        figure: '\d+'
+        a_radius: '\d+'
+        b: '\d+'
+        c: '\d+'
